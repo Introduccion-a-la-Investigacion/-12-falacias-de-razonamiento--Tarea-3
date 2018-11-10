@@ -1,0 +1,214 @@
+\documentclass[11pt,a4paper,titlepage]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, fouriernc, mathtools}
+% mathtools for: Aboxed (put box on last equation in align envirenment)
+\usepackage{microtype} %improves the spacing between words and letters
+
+\usepackage{graphicx}
+\graphicspath{ {./pics/} {./eps/}}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\newcommand{\quotes}[1]{``#1''}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLOR DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[svgnames]{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FONTS AND COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    SECTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+{\thesection} {3pt} {} } 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		CAPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		!!!EQUATION (ARRAY) --> USING ALIGN INSTEAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%using amsmath package to redefine eq. numeration (1.1, 1.2, ...) 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+
+%set box background to grey in align environment 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\patchcmd{\@Aboxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\patchcmd{\@boxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DESIGN CIRCUITS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[siunitx, american, smartlabels, cute inductors, europeanvoltages]{circuitikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{red}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREPARE TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\blue INTRODUCCI\'ON A LA INVESTIGACI\'ON \\
+\blueb TERCERA TAREA CORTA - FALACIAS}
+\author{Kathy Brenes Guerrero - Barnum Castillo Barquero}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\maketitle
+
+\section{Falacia 1: Gasolina y diésel empiezan a escasear por boicot de sindicatos }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Lunes 17 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 2 - Observador altera lo observado.
+\newline
+\newline
+La falacia del observador altera lo observado hacer referencia a que al ver un fen\'omeno lo alteramos.
+\newline
+Para detallar la raz\'on por la que seleccionamos este reportaje en esta categor\'ia radica en que el título de la noticia hace referencia a que la gasolina y el diésel en términos generales para todo el país empieza a escasear (el t\'itulo no delimita los sectores afectados). Sin embargo, cuando se empieza a leer la noticia, podemos apreciar que inicialmente se hace referencia a que algunas bombas (no todas como especifica el titulo) solo vend\'ian algunos carburantes. Llegaron a esta conclusión por medio de un recorrido que realizaron algunos de los corresponsales de ese diario lo cual limita nuestro dominio a aquellos lugar que hayan sido visitados, no todo el país como hace referencia el titular.
+\newline
+Adicionalmente, lo noticia enfatiza en que generalmente se abastec\'ian un total de 105 camiones que pasaron a ser \'unicamente 73 por la manifestaci\'on, lo cual representa un 69.52\% de producto abastecido con normalidad. ¿Es un 30\% de producto menos suficiente para escasear las gasolineras de todo el pa\'is?
+%%% END UBSECTION 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Falacia 2: ¿Tiene gato? Las pulgas ponen en riesgo su vida. }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Miércoles 19 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 2 - Observador altera lo observado.
+\newline
+\newline
+La falacia del observador altera lo observado hacer referencia a que al ver un fen\'omeno lo alteramos.
+\newline
+El titulo hace referencia a que nuestra vida podría estar en riesgo por tener un felino con pulgas o garrabatas en la página principal del periódico. Sin embargo, cuando nos trasladamos a la página 12 encontramos que hablan de como la bacteria Mycoplasma haemofelis afecta al sistema del felino y ocasiona una severa anemia. El titular se utiliza para capturar la atención del lector pero hace referencia a aspectos diferentes.
+\newline
+Otro punto interesante, es que no es normal que esto suceda, son casos extraordinarios o fortuitos en los que podr\'ia presentarse cuando se utiliza adem\'as una falacia por medio del empleo de vocabulario ci\'entifico por parte de la veterinaria Nilda Valverde Berm\'udez para desviar la atenci\'on del lector.
+\newline
+Finalmente la noticia concluy\'e con que no se puede afirmar a\'un que la enfermedad pueda ser tramitada al humano, cuando el titulo se\~nala que podr\'iamos morir por culpa de nuestro felino.
+
+%%% END SUBSECTION 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Falacia 3: Bloqueos les impidieron operarse para recuperar vista. }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Miércoles 19 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 4: Demostraci\'on por An\'ecdota.
+\newline
+\newline
+La noticia hace referia a 4 pacientes que se trasladaban en un misma ambulancia y quedaron atrapados por los cierres de v\'ias, por lo que se ausentaron a sus cirug\'ias programadas. A pesar, de que la noticia utiliza como hecho exacto la huelga para justificar la tard\'ia de la ambulancia, no se muestra ninguna evidencia exacta de que por esta raz\'on no lograran llegar a tiempo.
+\newline
+Adicionalmente, otros 57 personas han decidido ausentarse, lo cual tampoco se le puede atribuir a la huelga, por que en el mismo reporte la directora de la Cl\'inica Oftalmol\'ogica hace menci\'on a que han logrado operar con normalidad.
+\newline
+Por lo que la experiencia o anecdota de estas 4 personas no se puede considerar como una evidencia fundamental de las consecuencias que ha tenido la huelga para nuestro pa\'is.
+
+%%% END SECTION 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Falacia 4: NASA lanza sat\'elite para estudiar p\'erdida de hielo. }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Lunes 17 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 6: Lenguaje Cient\'ifico no es Ciencia.
+\newline
+\newline
+Los bandos malos usan \quotes{ciencia} para atacar a la ciencia. Intimida y parece
+decir verdades. Aunque algo parezca ciencia, debemos mantener escepticismo.
+Relacionada con la falacia de la autoridad:  \quotes{no voy a perder mi tiempo explicando porque soy superior}. Los que la usan tienden a tergiversar t\'erminos, decir cosas sin pruebas, a gran velocidad.
+\newline
+La noticia hace referencia a la tecnolog\'ia m\'as avanzada de este tipo. Sin embargo, no detallan el tipo de tecnolog\'ia. \'Unicamente se hace referencia a un sat\'elite con el l\'aser mas avanzado de la NASA, no se enfatiza en medios previos utilizados para estudiar la p\'erdida de hielo en la Tierra. No se detalla como lo hace ni las ventajas que se prevee que tenga. S\'olo como dice la descripci\'on del tipo de falacia enfatiza en qui\'en soy y en que me destaco. No c\'omo lo hago ni que pruebas tengo.
+
+%%% END SECTION 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Falacia 5: El problema de Costa Rica es el d\'eficit. }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Lunes 17 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 7: Peso de la prueba.
+\newline
+\newline
+Gabriel Torres analista de Moodys afirma que desliz presupuesta muetra fallas de controly enfatiza que los problemas que presenta la salud financiera radican en el desequilibro fiscal que posee el gobierno. La prueba a la que \'el le atribuye todo es la falta del control interno y todo el peso recae en el d\'eficit fiscal.
+\newline
+Sin embargo, a\'un no se cuentan con pruebas contidentes para atribuirlo como real o correcto. Pero tampoco se presentan casos en los que se pueda demostrar lo contrario, que el d\'eficit fiscal no es el culpable de nuestros problemas, pero como no puede ser demostrado es absurdo creer que debe ser tomado como cierto.
+
+%%% END SECTION 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Falacia 6: Luis G. Sol\'is culpa a Hacienda por hueco en pago de deuda. }{%
+\textbf{Noticia tomada del periódico} LA NACIÓN.
+\newline
+\textbf{Fecha:} Viernes 21 de setiembre del 2018.
+\newline
+\textbf{Tipo de falacia según la clasificación vista en clase:} 
+\newline
+Falacia 9: Racionalización de Fallas.
+\newline
+Razonamiento es diferente a racionalización. Muchas veces las masas son engañadas usando el razonamiento. Es decir, la explicación es forzada. Forzamos explicaciones para excusar malos funcionamientos.
+\newline
+En este caso el exmandatario fuerza una explicaci\'on para la falla en la subestimaci\'on del Presupuesto Nacional 2018. Afirmando que no fue culpa de \'el sino de los t\'ecnicos pertenecientes al Ministerio de Hacienda. Refugiandose en que no era responsabilidad de \'el dise\~nar esta clase de documentos. Sin embargo, un hecho muy interesante esque al ser interrogado afirma que tampoco es culpa de los t\'ecnicos y vuelve a generar incertidumbre en el reponsable del hueco presupuestario consecuencia de su ex gobernaci\'on.
+%%% END SECTION 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
